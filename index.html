@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="meta.home.title">Miguel Arnáiz</title>
+    <meta
+      name="description"
+      content="Miguel Arnáiz's professional portfolio across Growth, business, technology, entrepreneurship and design."
+      data-i18n-content="meta.home.description"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/favicon-photo-circle.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="page home-page is-entering">
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb-blue"></span>
+      <span class="orb orb-purple"></span>
+      <span class="orb orb-teal"></span>
+    </div>
+
+    <header class="site-header shell home-hero">
+      <nav class="top-nav" aria-label="Main navigation" data-i18n-aria-label="nav.main">
+        <p class="top-nav-meta">
+          <span class="top-nav-location" data-i18n="nav.location">Madrid, Spain</span>
+        </p>
+        <div class="top-nav-links">
+          <div class="top-nav-primary">
+            <a class="top-nav-link active" href="./" data-transition data-i18n="nav.home">Home</a>
+            <a class="top-nav-link" href="about.html" data-transition data-i18n="nav.about">About</a>
+          </div>
+          <div class="language-switcher" role="group" aria-label="Select language" data-i18n-aria-label="language.selector">
+            <button class="language-option" type="button" data-language="es" lang="es" aria-pressed="false">ES</button>
+            <span class="language-divider" aria-hidden="true">|</span>
+            <button class="language-option" type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Theme mode: system" aria-pressed="mixed">◐</button>
+        </div>
+      </nav>
+
+      <section class="profile-banner home-hero-banner" aria-label="Introduction" data-i18n-aria-label="hero.introduction">
+        <div class="profile-copy home-hero-copy">
+          <p class="profile-kicker" data-i18n="hero.positioning">Growth · Business · Technology</p>
+          <h1 class="profile-name">Miguel Arnáiz</h1>
+          <p class="profile-tagline" data-i18n="hero.tagline">Curious by nature. Driven to build, improve and grow.</p>
+          <div class="hero-actions">
+            <a class="hero-scroll-link" href="#projects" data-i18n="hero.explore">Explore my work</a>
+            <a class="hero-secondary-link" href="about.html" data-transition><span data-i18n="hero.about">About me</span> <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <figure class="hero-portrait hero-portrait-cutout">
+            <img
+              src="img/miguel-hero-cutout-v2.png"
+              data-src-light="img/miguel-hero-cutout-v2.png"
+              data-src-dark="img/miguel-hero-dark.jpg"
+              alt="Miguel Arnáiz"
+              width="673"
+              height="904"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </figure>
+
+          <div class="hero-info-card hero-role-card">
+            <span class="hero-card-label" data-i18n="hero.currentFocus">Current focus</span>
+            <div class="hero-card-row">
+              <strong>Growth Analyst</strong>
+              <span class="hero-card-arrow" aria-hidden="true">↗</span>
+            </div>
+          </div>
+
+          <div class="hero-info-card hero-location-card">
+            <span class="hero-status-dot" aria-hidden="true"></span>
+            <span data-i18n="nav.location">Madrid, Spain</span>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="shell home-main">
+      <section class="projects-showcase" id="projects" aria-labelledby="projects-title">
+        <div class="projects-heading">
+          <div>
+            <h2 id="projects-title" data-i18n-html="home.heading">Experience.</h2>
+          </div>
+          <p class="projects-intro-copy" data-i18n="home.intro">A selected path through professional experience, entrepreneurship, leadership, design and Growth.</p>
+        </div>
+
+        <div class="projects-toolbar" aria-label="Project order" data-i18n-aria-label="home.sortAria">
+          <label class="projects-filter-label" for="project-date-order" data-i18n="home.sortBy">Sort</label>
+          <select id="project-date-order" class="projects-filter-select" data-project-sort>
+            <option value="newest" selected data-i18n="home.newestFirst">Date: newest first</option>
+            <option value="oldest" data-i18n="home.oldestFirst">Date: oldest first</option>
+          </select>
+        </div>
+
+        <section class="project-list" data-project-list aria-label="Project list" data-i18n-aria-label="home.projectList"></section>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" aria-label="Footer" data-i18n-aria-label="footer.label">
+      <p class="footer-copy">&copy; 2026 Miguel. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <ul class="footer-links" aria-label="Contact links" data-i18n-aria-label="footer.contactLinks">
+        <li><a href="https://www.linkedin.com/in/miguel-arnáiz" target="_blank" rel="noopener noreferrer" title="Miguel Arnáiz on LinkedIn" data-i18n-title="footer.linkedinTitle">LinkedIn</a></li>
+        <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Email</a></li>
+      </ul>
+    </footer>
+
+    <script src="js/i18n.js" defer></script>
+    <script src="js/projects-data.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/transitions.js?v=20260428" defer></script>
+    <script src="js/home.js" defer></script>
+    <script src="js/reveal.js" defer></script>
+  </body>
+</html>

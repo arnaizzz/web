@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 675" role="img" aria-label="Flip flops business artwork">
+  <defs>
+    <linearGradient id="ffBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffb15e"/>
+      <stop offset="55%" stop-color="#ff7a45"/>
+      <stop offset="100%" stop-color="#ff5c8a"/>
+    </linearGradient>
+    <radialGradient id="ffGlowA" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ffGlowB" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffe1a8" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffe1a8" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="ffBlur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="45"/>
+    </filter>
+    <linearGradient id="ffSole" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.72"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="675" fill="url(#ffBg)"/>
+  <circle cx="140" cy="120" r="220" fill="url(#ffGlowA)" filter="url(#ffBlur)"/>
+  <circle cx="760" cy="560" r="260" fill="url(#ffGlowB)" filter="url(#ffBlur)"/>
+
+  <g transform="translate(450 345)">
+    <g transform="translate(-95 0) rotate(-6)">
+      <ellipse cx="0" cy="0" rx="118" ry="188" fill="url(#ffSole)"/>
+      <path d="M -60 -70 Q 0 -130 60 -70" fill="none" stroke="#ff5c8a" stroke-width="14" stroke-linecap="round"/>
+      <path d="M 0 -122 Q -8 -20 0 60" fill="none" stroke="#ff5c8a" stroke-width="14" stroke-linecap="round"/>
+    </g>
+    <g transform="translate(95 6) rotate(6)">
+      <ellipse cx="0" cy="0" rx="118" ry="188" fill="url(#ffSole)" opacity="0.9"/>
+      <path d="M -60 -70 Q 0 -130 60 -70" fill="none" stroke="#ff7a45" stroke-width="14" stroke-linecap="round"/>
+      <path d="M 0 -122 Q 8 -20 0 60" fill="none" stroke="#ff7a45" stroke-width="14" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>

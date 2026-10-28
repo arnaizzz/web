@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="meta.about.title">Miguel Arnáiz — About</title>
+    <meta
+      name="description"
+      content="Professional profile of Miguel Arnáiz, an entrepreneur and Business Administration graduate based in Madrid."
+      data-i18n-content="meta.about.description"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/favicon-photo-circle.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body class="page is-entering">
+    <div class="bg-orbs" aria-hidden="true">
+      <span class="orb orb-blue"></span>
+      <span class="orb orb-purple"></span>
+      <span class="orb orb-teal"></span>
+    </div>
+
+    <header class="site-header shell">
+      <nav class="top-nav" aria-label="Main navigation" data-i18n-aria-label="nav.main">
+        <p class="top-nav-meta">
+          <span class="top-nav-location" data-i18n="nav.location">Madrid, Spain</span>
+        </p>
+        <div class="top-nav-links">
+          <div class="top-nav-primary">
+            <a class="top-nav-link" href="./" data-transition data-i18n="nav.home">Home</a>
+            <a class="top-nav-link active" href="about.html" data-transition data-i18n="nav.about">About</a>
+          </div>
+          <div class="language-switcher" role="group" aria-label="Select language" data-i18n-aria-label="language.selector">
+            <button class="language-option" type="button" data-language="es" lang="es" aria-pressed="false">ES</button>
+            <span class="language-divider" aria-hidden="true">|</span>
+            <button class="language-option" type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+          </div>
+          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Theme mode: system" aria-pressed="mixed">◐</button>
+        </div>
+      </nav>
+
+      <section class="profile-banner compact" aria-label="Profile banner" data-i18n-aria-label="about.profileBanner">
+        <div class="profile-copy">
+          <p class="profile-kicker" data-i18n="about.kicker">About me</p>
+          <h1 class="profile-name" data-i18n="about.greeting">Hi, I'm Miguel</h1>
+        </div>
+      </section>
+    </header>
+
+    <main class="shell about-main">
+      <section class="about-grid" aria-label="About Miguel" data-i18n-aria-label="about.sectionAria">
+        <div class="about-copy" data-reveal>
+          <h2 class="about-title" data-i18n="about.title">Curiosity has been a constant in everything I've done so far.</h2>
+          <p class="about-intro" data-i18n="about.paragraph1">I've always been curious to learn something new, understand how things work, and find out whether there is a better way to do them. Above all, I like putting that curiosity into practice.</p>
+          <p data-i18n="about.paragraph2">Professionally, I am especially drawn to business because it brings together many of the questions that spark that curiosity: why a company grows, what drives a customer, how to improve a process, or how to position a brand.</p>
+          <p data-i18n="about.paragraph3">That curiosity has led me to explore very different areas, from business, operations, growth, marketing, automation, and technology to graphic design. Over time, I have realized that this breadth is one of my greatest strengths. I like understanding problems and finding solutions with the whole business in mind.</p>
+          <p data-i18n="about.paragraph4">I especially enjoy fast-moving environments with autonomy and plenty still to build. Places where I can take ownership, stay close to decisions, propose ideas, execute them, and learn.</p>
+          <p data-i18n="about.paragraph5">I hold myself to high standards and have a clear professional ambition: to keep growing, tackle increasingly complex problems, and become someone capable of creating more and more value wherever I am.</p>
+          <p data-i18n="about.paragraph6">I still have a great deal to learn. And that is precisely one of the things that motivates me most.</p>
+
+          <ul class="about-links">
+            <li><a href="https://www.linkedin.com/in/miguel-arnáiz" target="_blank" rel="noopener noreferrer" title="Miguel Arnáiz on LinkedIn" data-i18n-title="footer.linkedinTitle">LinkedIn</a></li>
+            <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Email</a></li>
+          </ul>
+        </div>
+
+        <div class="about-stats" data-reveal aria-label="Quick facts" data-i18n-aria-label="about.quickFacts">
+          <div class="stat-tile stat-tile-wide stat-tile-education">
+            <p class="stat-label" data-i18n="about.education">Education</p>
+            <div class="stat-value-pair">
+              <p class="stat-value" data-i18n="about.educationValue">Degree in Business Administration and Management</p>
+              <p class="stat-value" data-i18n="about.educationInstitutionValue">Universidad Carlos III de Madrid</p>
+            </div>
+          </div>
+          <div class="stat-tile">
+            <p class="stat-label" data-i18n="about.internationalExperience">International experience</p>
+            <p class="stat-value" data-i18n="about.internationalExperienceValue">Erasmus at the University of Latvia, Riga</p>
+          </div>
+          <div class="stat-tile">
+            <p class="stat-label" data-i18n="about.focus">Focus</p>
+            <p class="stat-value" data-i18n="about.focusValue">Growth, business, operations &amp; technology</p>
+          </div>
+          <div class="stat-tile stat-tile-wide stat-tile-experience">
+            <p class="stat-label" data-i18n="about.experience">Experience</p>
+            <p class="stat-value" data-i18n="about.experienceValue">Building ventures and projects since age 13</p>
+          </div>
+          <figure class="about-stats-image">
+            <img src="img/about-start-uc3m.jpg" alt="Miguel speaking at a Start UC3M event" data-i18n-alt="about.startImageAlt" loading="lazy" decoding="async">
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer shell" aria-label="Footer" data-i18n-aria-label="footer.label">
+      <p class="footer-copy">&copy; 2026 Miguel. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <ul class="footer-links" aria-label="Contact links" data-i18n-aria-label="footer.contactLinks">
+        <li><a href="https://www.linkedin.com/in/miguel-arnáiz" target="_blank" rel="noopener noreferrer" title="Miguel Arnáiz on LinkedIn" data-i18n-title="footer.linkedinTitle">LinkedIn</a></li>
+        <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Email</a></li>
+      </ul>
+    </footer>
+
+    <script src="js/i18n.js" defer></script>
+    <script src="js/theme.js" defer></script>
+    <script src="js/transitions.js?v=20260428" defer></script>
+    <script src="js/about.js" defer></script>
+    <script src="js/reveal.js" defer></script>
+  </body>
+</html>
