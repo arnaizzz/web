@@ -1,5 +1,7 @@
 (function pageTransitions() {
   var forceCleanupTimer = null;
+  var navigationDelay = 80;
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
   function clearTransitionState() {
     var body = document.body;
@@ -21,7 +23,7 @@
     forceCleanupTimer = window.setTimeout(function () {
       clearTransitionState();
       forceCleanupTimer = null;
-    }, 1200);
+    }, 600);
   }
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -81,11 +83,17 @@
     }
 
     event.preventDefault();
+
+    if (reducedMotion.matches) {
+      window.location.assign(destination.href);
+      return;
+    }
+
     document.body.classList.add("is-leaving");
     scheduleForceCleanup();
 
     window.setTimeout(function () {
       window.location.assign(destination.href);
-    }, 240);
+    }, navigationDelay);
   });
 })();

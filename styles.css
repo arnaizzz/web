@@ -306,6 +306,28 @@ a {
   color: var(--bg);
 }
 
+.ui-icon {
+  display: block;
+  width: 1em;
+  height: 1em;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ui-icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+.theme-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
 /* ---------- Profile banner (about / project headers) ---------- */
 
 .profile-banner {
@@ -1157,7 +1179,7 @@ a {
 .page {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 260ms ease, transform 260ms ease;
+  transition: opacity 140ms ease, transform 140ms ease;
 }
 
 .page.is-entering {
@@ -1760,8 +1782,7 @@ body::before {
     0 16px 28px -18px rgba(18, 20, 22, 0.68);
 }
 
-.hero-scroll-link::after {
-  content: "↓";
+.hero-scroll-icon {
   display: inline-grid;
   place-items: center;
   width: 1.45rem;
@@ -1770,6 +1791,14 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 50%;
   font-size: 0.72rem;
+}
+
+.hero-scroll-icon .ui-icon,
+.hero-secondary-icon .ui-icon,
+.hero-card-arrow .ui-icon,
+.project-link-arrow .ui-icon {
+  width: 0.82rem;
+  height: 0.82rem;
 }
 
 .hero-scroll-link:hover,
@@ -3477,6 +3506,11 @@ body::before {
   -webkit-backdrop-filter: blur(16px);
 }
 
+.project-lightbox-close .ui-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
 body.is-lightbox-open {
   overflow: hidden;
 }
@@ -3515,6 +3549,11 @@ body.is-lightbox-open {
   font-size: 0.9rem;
 }
 
+.project-detail-external-link .ui-icon {
+  width: 0.82rem;
+  height: 0.82rem;
+}
+
 .project-detail-external-link:hover,
 .project-detail-external-link:focus-visible {
   background: var(--text);
@@ -3542,6 +3581,12 @@ body.is-lightbox-open {
   line-height: 1;
   text-decoration: none;
   transition: transform 220ms ease, background-color 220ms ease, color 220ms ease;
+}
+
+.project-top-back-link .ui-icon,
+.project-back-link .ui-icon {
+  width: 0.95rem;
+  height: 0.95rem;
 }
 
 .project-top-back-link:hover,

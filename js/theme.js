@@ -6,9 +6,9 @@
   var mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
   var iconByMode = {
-    system: "◐",
-    dark: "☾",
-    light: "☀"
+    system: "<svg class='ui-icon theme-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><circle cx='12' cy='12' r='7.5'></circle><path class='ui-icon-fill' d='M12 4.5a7.5 7.5 0 0 0 0 15Z'></path></svg>",
+    dark: "<svg class='ui-icon theme-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M20 15.2A8 8 0 0 1 8.8 4 8 8 0 1 0 20 15.2Z'></path></svg>",
+    light: "<svg class='ui-icon theme-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><circle cx='12' cy='12' r='3.5'></circle><path d='M12 2.25v2M12 19.75v2M4.25 12h-2M21.75 12h-2M5.1 5.1 6.5 6.5M17.5 17.5l1.4 1.4M18.9 5.1l-1.4 1.4M6.5 17.5l-1.4 1.4'></path></svg>"
   };
 
   var nextModeByMode = {
@@ -92,7 +92,7 @@
     var buttons = document.querySelectorAll("[data-theme-toggle]");
 
     buttons.forEach(function (button) {
-      button.textContent = iconByMode[mode] || iconByMode[systemMode];
+      button.innerHTML = iconByMode[mode] || iconByMode[systemMode];
       button.setAttribute("aria-pressed", pressedValue);
       button.setAttribute("data-theme-mode", mode);
       button.setAttribute(
