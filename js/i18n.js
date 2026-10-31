@@ -9,8 +9,8 @@
       en: "Miguel Arnáiz"
     },
     "meta.home.description": {
-      es: "Portfolio profesional de Miguel Arnáiz sobre Growth, negocio, tecnología, emprendimiento y diseño.",
-      en: "Miguel Arnáiz's professional portfolio across Growth, business, technology, entrepreneurship and design."
+      es: "Miguel Arnáiz's professional portfolio.",
+      en: "Miguel Arnáiz's professional portfolio."
     },
     "meta.about.title": {
       es: "Miguel Arnáiz - Sobre mí",

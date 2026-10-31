@@ -4250,7 +4250,7 @@ body.is-lightbox-open {
   .home-hero-banner {
     min-height: auto;
     margin: 0.65rem 0 0.85rem;
-    padding: clamp(2.25rem, 10vw, 3rem) 1.25rem 0.85rem;
+    padding: clamp(2.25rem, 10vw, 3rem) 1.25rem 0;
     gap: 1.5rem;
     overflow: hidden;
     border-radius: 27px;
@@ -4301,6 +4301,10 @@ body.is-lightbox-open {
     padding: 0;
   }
 
+  .hero-visual::before {
+    background: rgba(110, 117, 121, 0.14);
+  }
+
   .hero-portrait-cutout {
     aspect-ratio: 4 / 5;
   }
@@ -4327,6 +4331,10 @@ body.is-lightbox-open {
 
   .hero-role-card strong {
     font-size: 0.95rem;
+  }
+
+  .hero-role-card .hero-card-arrow {
+    display: none;
   }
 
   .projects-showcase {
@@ -4744,6 +4752,10 @@ body.is-lightbox-open {
 
   .logo-marquee-item {
     height: 3.25rem;
+  }
+
+  .logo-marquee-item img {
+    height: calc(var(--logo-height, 2.1rem) - 0.3rem);
   }
 }
 
