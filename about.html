@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title data-i18n="meta.about.title">Miguel Arnáiz — About</title>
+    <title data-i18n="meta.about.title">Miguel Arnáiz - Sobre mí</title>
     <meta
       name="description"
       content="Professional profile of Miguel Arnáiz, an entrepreneur and Business Administration graduate based in Madrid."
@@ -28,9 +28,6 @@
 
     <header class="site-header shell">
       <nav class="top-nav" aria-label="Main navigation" data-i18n-aria-label="nav.main">
-        <p class="top-nav-meta">
-          <span class="top-nav-location" data-i18n="nav.location">Madrid, Spain</span>
-        </p>
         <div class="top-nav-links">
           <div class="top-nav-primary">
             <a class="top-nav-link" href="./" data-transition data-i18n="nav.home">Home</a>
@@ -67,6 +64,15 @@
           <ul class="about-links">
             <li><a href="https://www.linkedin.com/in/miguel-arnáiz" target="_blank" rel="noopener noreferrer" title="Miguel Arnáiz on LinkedIn" data-i18n-title="footer.linkedinTitle">LinkedIn</a></li>
             <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Email</a></li>
+            <li class="cv-download">
+              <details class="cv-menu">
+                <summary class="cv-menu-trigger" data-i18n="cv.button" data-i18n-aria-label="cv.openMenu">CV</summary>
+                <div class="cv-menu-options" aria-label="Choose CV language" data-i18n-aria-label="cv.languageMenu">
+                  <a href="files/Miguel-Arnaiz-CV-ES.pdf" download="Miguel-Arnaiz-CV-Espanol.pdf" data-i18n="cv.spanish">CV Español</a>
+                  <a href="files/Miguel-Arnaiz-CV-EN.pdf" download="Miguel-Arnaiz-CV-English.pdf" data-i18n="cv.english">CV English</a>
+                </div>
+              </details>
+            </li>
           </ul>
         </div>
 
@@ -102,12 +108,22 @@
       <ul class="footer-links" aria-label="Contact links" data-i18n-aria-label="footer.contactLinks">
         <li><a href="https://www.linkedin.com/in/miguel-arnáiz" target="_blank" rel="noopener noreferrer" title="Miguel Arnáiz on LinkedIn" data-i18n-title="footer.linkedinTitle">LinkedIn</a></li>
         <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Email</a></li>
+        <li class="cv-download">
+          <details class="cv-menu">
+            <summary class="cv-menu-trigger" data-i18n="cv.button" data-i18n-aria-label="cv.openMenu">CV</summary>
+            <div class="cv-menu-options" aria-label="Choose CV language" data-i18n-aria-label="cv.languageMenu">
+              <a href="files/Miguel-Arnaiz-CV-ES.pdf" download="Miguel-Arnaiz-CV-Espanol.pdf" data-i18n="cv.spanish">CV Español</a>
+              <a href="files/Miguel-Arnaiz-CV-EN.pdf" download="Miguel-Arnaiz-CV-English.pdf" data-i18n="cv.english">CV English</a>
+            </div>
+          </details>
+        </li>
       </ul>
     </footer>
 
     <script src="js/i18n.js" defer></script>
     <script src="js/theme.js" defer></script>
     <script src="js/transitions.js?v=20260428" defer></script>
+    <script src="js/cv-menu.js" defer></script>
     <script src="js/about.js" defer></script>
     <script src="js/reveal.js" defer></script>
   </body>

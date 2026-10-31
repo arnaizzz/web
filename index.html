@@ -28,9 +28,6 @@
 
     <header class="site-header shell home-hero">
       <nav class="top-nav" aria-label="Main navigation" data-i18n-aria-label="nav.main">
-        <p class="top-nav-meta">
-          <span class="top-nav-location" data-i18n="nav.location">Madrid, Spain</span>
-        </p>
         <div class="top-nav-links">
           <div class="top-nav-primary">
             <a class="top-nav-link active" href="./" data-transition data-i18n="nav.home">Home</a>
@@ -86,13 +83,58 @@
       </section>
     </header>
 
+    <section
+      id="brands"
+      class="logo-marquee shell"
+      data-logo-marquee
+      aria-label="Selected brands and ventures"
+      data-i18n-aria-label="home.logoMarqueeLabel"
+    >
+      <div class="logo-marquee-viewport">
+        <div class="logo-marquee-track" data-logo-marquee-track>
+          <ul class="logo-marquee-list" data-logo-marquee-list>
+            <li class="logo-marquee-item" style="--logo-height: 2.45rem">
+              <img src="img/logos/puffy-slippers.png" alt="Puffy Slippers" width="362" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.4rem">
+              <img src="img/logos/beastversion.png" alt="BeastVersion" width="215" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.3rem">
+              <img src="img/logos/prophero.png" alt="PropHero" width="809" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.4rem">
+              <img src="img/logos/portadicas.png" alt="Portadicas" width="193" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.3rem">
+              <img src="img/logos/detaily.png" alt="Detaily" width="570" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.25rem">
+              <img src="img/logos/arnaiz-arn.png" alt="arnaiz." width="741" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.6rem">
+              <img src="img/logos/sesale.png" alt="Sesale" width="298" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.7rem">
+              <img src="img/logos/start-uc3m.png" alt="Start UC3M" width="473" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.5rem">
+              <img src="img/logos/ekly.png" alt="Ekly" width="222" height="192" decoding="async">
+            </li>
+            <li class="logo-marquee-item" style="--logo-height: 2.2rem">
+              <img src="img/logos/vemory.png" alt="Vemory" width="1169" height="192" decoding="async">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <main class="shell home-main">
       <section class="projects-showcase" id="projects" aria-labelledby="projects-title">
         <div class="projects-heading">
           <div>
             <h2 id="projects-title" data-i18n-html="home.heading">Experience.</h2>
           </div>
-          <p class="projects-intro-copy" data-i18n="home.intro">A selected path through professional experience, entrepreneurship, leadership, design and Growth.</p>
+          <p class="projects-intro-copy" data-i18n="home.intro">A selection of projects and experiences that reflect my professional journey.</p>
         </div>
 
         <div class="projects-toolbar" aria-label="Project order" data-i18n-aria-label="home.sortAria">
@@ -112,6 +154,15 @@
       <ul class="footer-links" aria-label="Contact links" data-i18n-aria-label="footer.contactLinks">
         <li><a href="https://www.linkedin.com/in/miguel-arnáiz" target="_blank" rel="noopener noreferrer" title="Miguel Arnáiz on LinkedIn" data-i18n-title="footer.linkedinTitle">LinkedIn</a></li>
         <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Email</a></li>
+        <li class="cv-download">
+          <details class="cv-menu">
+            <summary class="cv-menu-trigger" data-i18n="cv.button" data-i18n-aria-label="cv.openMenu">CV</summary>
+            <div class="cv-menu-options" aria-label="Choose CV language" data-i18n-aria-label="cv.languageMenu">
+              <a href="files/Miguel-Arnaiz-CV-ES.pdf" download="Miguel-Arnaiz-CV-Espanol.pdf" data-i18n="cv.spanish">CV Español</a>
+              <a href="files/Miguel-Arnaiz-CV-EN.pdf" download="Miguel-Arnaiz-CV-English.pdf" data-i18n="cv.english">CV English</a>
+            </div>
+          </details>
+        </li>
       </ul>
     </footer>
 
@@ -119,6 +170,8 @@
     <script src="js/projects-data.js" defer></script>
     <script src="js/theme.js" defer></script>
     <script src="js/transitions.js?v=20260428" defer></script>
+    <script src="js/cv-menu.js" defer></script>
+    <script src="js/logo-marquee.js" defer></script>
     <script src="js/home.js" defer></script>
     <script src="js/reveal.js" defer></script>
   </body>

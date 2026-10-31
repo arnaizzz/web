@@ -13,8 +13,8 @@
       en: "Miguel Arnáiz's professional portfolio across Growth, business, technology, entrepreneurship and design."
     },
     "meta.about.title": {
-      es: "Miguel Arnáiz — Sobre mí",
-      en: "Miguel Arnáiz — About"
+      es: "Miguel Arnáiz - Sobre mí",
+      en: "Miguel Arnáiz - About"
     },
     "meta.about.description": {
       es: "Perfil profesional de Miguel Arnáiz, emprendedor y graduado en Administración de Empresas en Madrid.",
@@ -46,8 +46,12 @@
       en: "Experience."
     },
     "home.intro": {
-      es: "Un recorrido seleccionado por experiencia profesional, emprendimiento, liderazgo, diseño y Growth.",
-      en: "A selected path through professional experience, entrepreneurship, leadership, design and Growth."
+      es: "Una selección de proyectos y experiencias que reflejan mi recorrido profesional.",
+      en: "A selection of projects and experiences that reflect my professional journey."
+    },
+    "home.logoMarqueeLabel": {
+      es: "Marcas y proyectos seleccionados",
+      en: "Selected brands and ventures"
     },
     "home.sortAria": { es: "Orden de proyectos por fecha", en: "Project order by date" },
     "home.sortBy": { es: "Ordenar", en: "Sort" },
@@ -192,6 +196,11 @@
     "footer.contactLinks": { es: "Enlaces de contacto", en: "Contact links" },
     "footer.linkedinTitle": { es: "Miguel Arnáiz en LinkedIn", en: "Miguel Arnáiz on LinkedIn" },
     "footer.email": { es: "Correo", en: "Email" },
+    "cv.button": { es: "CV", en: "CV" },
+    "cv.openMenu": { es: "Mostrar opciones de descarga del CV", en: "Show CV download options" },
+    "cv.languageMenu": { es: "Elegir idioma del CV", en: "Choose CV language" },
+    "cv.spanish": { es: "CV Español", en: "Spanish CV" },
+    "cv.english": { es: "CV English", en: "English CV" },
     "theme.mode.system": { es: "sistema", en: "system" },
     "theme.mode.dark": { es: "oscuro", en: "dark" },
     "theme.mode.light": { es: "claro", en: "light" },
