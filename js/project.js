@@ -3,13 +3,16 @@
     return a.order - b.order;
   });
   var container = document.querySelector("[data-project-detail]");
+  var arrowLeftIcon = "<svg class='ui-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M19 12H5M11 6l-6 6 6 6'></path></svg>";
+  var arrowUpRightIcon = "<svg class='ui-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M7 17 17 7M9 7h8v8'></path></svg>";
+  var closeIcon = "<svg class='ui-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='m6 6 12 12M18 6 6 18'></path></svg>";
 
   if (!container || !projects.length) {
     return;
   }
 
   function getLanguage() {
-    return window.I18N ? window.I18N.getLanguage() : "en";
+    return window.I18N ? window.I18N.getLanguage() : "es";
   }
 
   function localize(value, language) {
@@ -18,7 +21,7 @@
     }
 
     if (value && typeof value === "object" && !Array.isArray(value)) {
-      return value[language] != null ? value[language] : value.en;
+      return value[language] != null ? value[language] : value.es;
     }
 
     return value;
@@ -77,7 +80,7 @@
         escapeHtml(item.src) +
         "' alt='" +
         escapeHtml(imageAlt) +
-        "' loading='lazy'></button>" +
+        "' loading='lazy' decoding='async'></button>" +
         (caption
           ? "<figcaption>" + escapeHtml(caption) + "</figcaption>"
           : "") +
@@ -129,8 +132,8 @@
       "'>" +
       "<button class='project-lightbox-close' type='button' data-lightbox-close aria-label='" +
       escapeHtml(closeLabel) +
-      "'>×</button>" +
-      "<figure><img data-lightbox-image src='' alt=''></figure>" +
+      "'>" + closeIcon + "</button>" +
+      "<figure><img data-lightbox-image src='' alt='' decoding='async'></figure>" +
       "</dialog>"
     );
   }
@@ -230,7 +233,7 @@
           escapeHtml(item.href) +
           "'" + externalAttributes + ">" +
           escapeHtml(localize(item.label, language)) +
-          "<span aria-hidden='true'>↗</span></a>"
+          "<span aria-hidden='true'>" + arrowUpRightIcon + "</span></a>"
         );
       }).join("") +
       "</nav>"
@@ -263,7 +266,7 @@
           " data-gallery-src='" + escapeHtml(item.src) + "'" +
           " data-gallery-alt='" + escapeHtml(alt) + "'" +
           " aria-label='" + escapeHtml(openLabel + " " + alt) + "'>" +
-          "<img src='" + escapeHtml(item.src) + "' alt='" + escapeHtml(alt) + "' loading='lazy'>" +
+          "<img src='" + escapeHtml(item.src) + "' alt='" + escapeHtml(alt) + "' loading='lazy' decoding='async'>" +
           "</button>"
         );
       }).join("") +
@@ -273,9 +276,9 @@
       "'>" +
       "<button class='project-lightbox-close' type='button' data-lightbox-close aria-label='" +
       escapeHtml(closeLabel) +
-      "'>×</button>" +
+      "'>" + closeIcon + "</button>" +
       "<figure>" +
-      "<img data-lightbox-image src='' alt=''>" +
+      "<img data-lightbox-image src='' alt='' decoding='async'>" +
       "</figure>" +
       "</dialog>" +
       "</section>"
@@ -642,7 +645,7 @@
       escapeHtml(translate("project.back")) +
       "' title='" +
       escapeHtml(translate("project.back")) +
-      "'><span aria-hidden='true'>←</span></a>" +
+      "'>" + arrowLeftIcon + "</a>" +
       "<p class='project-category'>" +
       escapeHtml(category) +
       "</p>" +
@@ -662,7 +665,7 @@
       renderTextList(selected.content && localize(selected.content.results, language), "project-results") +
       renderTextList(selected.content && localize(selected.content.learnings, language), "project-learnings") +
       renderSections(selected.sections, language, selected.sectionLayout) +
-      "<a class='project-back-link' href='./#projects' data-transition><span aria-hidden='true'>←</span> " +
+      "<a class='project-back-link' href='./#projects' data-transition>" + arrowLeftIcon + " " +
       escapeHtml(translate("project.back")) +
       "</a>" +
       "</div>" +

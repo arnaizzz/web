@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,29 +27,28 @@
     </div>
 
     <header class="site-header shell home-hero">
-      <nav class="top-nav" aria-label="Main navigation" data-i18n-aria-label="nav.main">
+      <nav class="top-nav" aria-label="Navegación principal" data-i18n-aria-label="nav.main">
         <div class="top-nav-links">
           <div class="top-nav-primary">
-            <a class="top-nav-link active" href="./" data-transition data-i18n="nav.home">Home</a>
-            <a class="top-nav-link" href="about.html" data-transition data-i18n="nav.about">About</a>
+            <a class="top-nav-link active" href="./" data-transition data-i18n="nav.home">Inicio</a>
+            <a class="top-nav-link" href="about.html" data-transition data-i18n="nav.about">Sobre mí</a>
           </div>
-          <div class="language-switcher" role="group" aria-label="Select language" data-i18n-aria-label="language.selector">
-            <button class="language-option" type="button" data-language="es" lang="es" aria-pressed="false">ES</button>
+          <div class="language-switcher" role="group" aria-label="Seleccionar idioma" data-i18n-aria-label="language.selector">
+            <button class="language-option" type="button" data-language="es" lang="es" aria-pressed="true">ES</button>
             <span class="language-divider" aria-hidden="true">|</span>
-            <button class="language-option" type="button" data-language="en" lang="en" aria-pressed="true">EN</button>
+            <button class="language-option" type="button" data-language="en" lang="en" aria-pressed="false">EN</button>
           </div>
-          <button class="theme-toggle" type="button" data-theme-toggle aria-label="Theme mode: system" aria-pressed="mixed">◐</button>
         </div>
       </nav>
 
-      <section class="profile-banner home-hero-banner" aria-label="Introduction" data-i18n-aria-label="hero.introduction">
+      <section class="profile-banner home-hero-banner" aria-label="Introducción" data-i18n-aria-label="hero.introduction">
         <div class="profile-copy home-hero-copy">
           <p class="profile-kicker" data-i18n="hero.positioning">Growth · Business · Technology</p>
           <h1 class="profile-name">Miguel Arnáiz</h1>
-          <p class="profile-tagline" data-i18n="hero.tagline">Curious by nature. Driven to build, improve and grow.</p>
+          <p class="profile-tagline" data-i18n="hero.tagline">Curioso por naturaleza. Impulsado por crear, mejorar y crecer.</p>
           <div class="hero-actions">
-            <a class="hero-scroll-link" href="#projects" data-i18n="hero.explore">Explore my work</a>
-            <a class="hero-secondary-link" href="about.html" data-transition><span data-i18n="hero.about">About me</span> <span aria-hidden="true">&rarr;</span></a>
+            <a class="hero-scroll-link" href="#projects"><span data-i18n="hero.explore">Explora mi trabajo</span><span class="hero-scroll-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M12 5v14M6 13l6 6 6-6"></path></svg></span></a>
+            <a class="hero-secondary-link" href="about.html" data-transition><span data-i18n="hero.about">Sobre mí</span><span class="hero-secondary-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M5 12h14M13 6l6 6-6 6"></path></svg></span></a>
           </div>
         </div>
 
@@ -57,8 +56,6 @@
           <figure class="hero-portrait hero-portrait-cutout">
             <img
               src="img/miguel-hero-cutout-v2.png"
-              data-src-light="img/miguel-hero-cutout-v2.png"
-              data-src-dark="img/miguel-hero-dark.jpg"
               alt="Miguel Arnáiz"
               width="673"
               height="904"
@@ -68,16 +65,16 @@
           </figure>
 
           <div class="hero-info-card hero-role-card">
-            <span class="hero-card-label" data-i18n="hero.currentFocus">Current focus</span>
+            <span class="hero-card-label" data-i18n="hero.currentFocus">Enfoque actual</span>
             <div class="hero-card-row">
               <strong>Growth Analyst</strong>
-              <span class="hero-card-arrow" aria-hidden="true">↗</span>
+              <span class="hero-card-arrow" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M9 7h8v8"></path></svg></span>
             </div>
           </div>
 
           <div class="hero-info-card hero-location-card">
             <span class="hero-status-dot" aria-hidden="true"></span>
-            <span data-i18n="nav.location">Madrid, Spain</span>
+            <span data-i18n="nav.location">Madrid, España</span>
           </div>
         </div>
       </section>
@@ -87,7 +84,7 @@
       id="brands"
       class="logo-marquee shell"
       data-logo-marquee
-      aria-label="Selected brands and ventures"
+      aria-label="Marcas y proyectos seleccionados"
       data-i18n-aria-label="home.logoMarqueeLabel"
     >
       <div class="logo-marquee-viewport">
@@ -134,30 +131,30 @@
           <div>
             <h2 id="projects-title" data-i18n-html="home.heading">Experience.</h2>
           </div>
-          <p class="projects-intro-copy" data-i18n="home.intro">A selection of projects and experiences that reflect my professional journey.</p>
+          <p class="projects-intro-copy" data-i18n="home.intro">Una selección de proyectos y experiencias que reflejan mi recorrido profesional.</p>
         </div>
 
-        <div class="projects-toolbar" aria-label="Project order" data-i18n-aria-label="home.sortAria">
-          <label class="projects-filter-label" for="project-date-order" data-i18n="home.sortBy">Sort</label>
+        <div class="projects-toolbar" aria-label="Orden de proyectos por fecha" data-i18n-aria-label="home.sortAria">
+          <label class="projects-filter-label" for="project-date-order" data-i18n="home.sortBy">Ordenar</label>
           <select id="project-date-order" class="projects-filter-select" data-project-sort>
-            <option value="newest" selected data-i18n="home.newestFirst">Date: newest first</option>
-            <option value="oldest" data-i18n="home.oldestFirst">Date: oldest first</option>
+            <option value="newest" selected data-i18n="home.newestFirst">Fecha: más reciente</option>
+            <option value="oldest" data-i18n="home.oldestFirst">Fecha: más antigua</option>
           </select>
         </div>
 
-        <section class="project-list" data-project-list aria-label="Project list" data-i18n-aria-label="home.projectList"></section>
+        <section class="project-list" data-project-list aria-label="Lista de proyectos" data-i18n-aria-label="home.projectList"></section>
       </section>
     </main>
 
-    <footer class="site-footer shell" aria-label="Footer" data-i18n-aria-label="footer.label">
-      <p class="footer-copy">&copy; 2026 Miguel. <span data-i18n="footer.rights">All rights reserved.</span></p>
-      <ul class="footer-links" aria-label="Contact links" data-i18n-aria-label="footer.contactLinks">
+    <footer class="site-footer shell" aria-label="Pie de página" data-i18n-aria-label="footer.label">
+      <p class="footer-copy">&copy; 2026 Miguel. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <ul class="footer-links" aria-label="Enlaces de contacto" data-i18n-aria-label="footer.contactLinks">
         <li><a href="https://www.linkedin.com/in/miguel-arnáiz" target="_blank" rel="noopener noreferrer" title="Miguel Arnáiz on LinkedIn" data-i18n-title="footer.linkedinTitle">LinkedIn</a></li>
-        <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Email</a></li>
+        <li><a href="mailto:arnaizburgosmiguel@gmail.com" data-i18n="footer.email">Correo</a></li>
         <li class="cv-download">
           <details class="cv-menu">
             <summary class="cv-menu-trigger" data-i18n="cv.button" data-i18n-aria-label="cv.openMenu">CV</summary>
-            <div class="cv-menu-options" aria-label="Choose CV language" data-i18n-aria-label="cv.languageMenu">
+            <div class="cv-menu-options" aria-label="Elegir idioma del CV" data-i18n-aria-label="cv.languageMenu">
               <a href="files/Miguel-Arnaiz-CV-ES.pdf" download="Miguel-Arnaiz-CV-Espanol.pdf" data-i18n="cv.spanish">CV Español</a>
               <a href="files/Miguel-Arnaiz-CV-EN.pdf" download="Miguel-Arnaiz-CV-English.pdf" data-i18n="cv.english">CV English</a>
             </div>
@@ -168,8 +165,7 @@
 
     <script src="js/i18n.js" defer></script>
     <script src="js/projects-data.js" defer></script>
-    <script src="js/theme.js" defer></script>
-    <script src="js/transitions.js?v=20260428" defer></script>
+    <script src="js/transitions.js?v=20261102" defer></script>
     <script src="js/cv-menu.js" defer></script>
     <script src="js/logo-marquee.js" defer></script>
     <script src="js/home.js" defer></script>

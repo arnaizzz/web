@@ -4,13 +4,14 @@
   });
   var list = document.querySelector("[data-project-list]");
   var sortSelect = document.querySelector("[data-project-sort]");
+  var arrowUpRightIcon = "<svg class='ui-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M7 17 17 7M9 7h8v8'></path></svg>";
 
   if (!list || !projects.length) {
     return;
   }
 
   function getLanguage() {
-    return window.I18N ? window.I18N.getLanguage() : "en";
+    return window.I18N ? window.I18N.getLanguage() : "es";
   }
 
   function localize(value, language) {
@@ -19,7 +20,7 @@
     }
 
     if (value && typeof value === "object" && !Array.isArray(value)) {
-      return value[language] != null ? value[language] : value.en;
+      return value[language] != null ? value[language] : value.es;
     }
 
     return value;
@@ -205,7 +206,7 @@
           careerProgressionMarkup +
           "<span class='project-link'><span>" +
           escapeHtml(translate("home.exploreProject")) +
-          "</span><span class='project-link-arrow' aria-hidden='true'>↗</span></span>" +
+          "</span><span class='project-link-arrow' aria-hidden='true'>" + arrowUpRightIcon + "</span></span>" +
           "</div>" +
           "<div class='project-image'>" +
           renderCover(project) +

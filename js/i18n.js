@@ -1,6 +1,6 @@
 (function languageController() {
   var storageKey = "portfolio-language";
-  var defaultLanguage = "en";
+  var defaultLanguage = "es";
   var supportedLanguages = ["es", "en"];
 
   var translations = {
@@ -338,13 +338,13 @@
     localizePage: localizePage
   };
 
-  document.addEventListener("DOMContentLoaded", function () {
-    localizePage(document);
+  // This script is loaded with `defer`, so the document is already parsed here.
+  // Localize before DOMContentLoaded to avoid a visible language swap.
+  localizePage(document);
 
-    document.querySelectorAll("[data-language]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        setLanguage(button.getAttribute("data-language"));
-      });
+  document.querySelectorAll("[data-language]").forEach(function (button) {
+    button.addEventListener("click", function () {
+      setLanguage(button.getAttribute("data-language"));
     });
   });
 })();

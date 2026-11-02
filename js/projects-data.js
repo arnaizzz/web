@@ -694,7 +694,7 @@ window.PROJECTS = [
     slug: "madrid-innovation-lab-panel-discussion",
     title: {
       es: "Madrid Innovation Lab - Mesa redonda",
-      en: "Madrid Innovation Lab — Panel Discussion"
+      en: "Madrid Innovation Lab - Panel Discussion"
     },
     date: { es: "2025", en: "2025" },
     categoryKey: "public-speaking",
