@@ -1185,11 +1185,25 @@ a {
 .page.is-entering {
   opacity: 0;
   transform: translateY(12px);
+  animation: page-entry-failsafe 140ms ease 700ms forwards;
 }
 
 .page.is-leaving {
   opacity: 0;
   transform: translateY(-10px);
+  animation: none;
+}
+
+@keyframes page-entry-failsafe {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ---------- Footer ---------- */

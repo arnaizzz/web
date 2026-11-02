@@ -7,7 +7,17 @@
   var arrowUpRightIcon = "<svg class='ui-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='M7 17 17 7M9 7h8v8'></path></svg>";
   var closeIcon = "<svg class='ui-icon' viewBox='0 0 24 24' aria-hidden='true' focusable='false'><path d='m6 6 12 12M18 6 6 18'></path></svg>";
 
-  if (!container || !projects.length) {
+  if (!container) {
+    return;
+  }
+
+  if (!projects.length) {
+    var initialRenderError = container.querySelector("[data-project-render-error]");
+    container.setAttribute("aria-busy", "false");
+    if (initialRenderError) {
+      initialRenderError.hidden = false;
+    }
+    document.body.classList.remove("is-entering", "is-leaving");
     return;
   }
 
@@ -391,6 +401,32 @@
 
   var timelineCleanup = function () {};
   var galleryCleanup = function () {};
+  var projectRevealSafetyTimer = null;
+
+  function revealProjectDetail() {
+    var detail = container.querySelector(".project-detail");
+
+    if (!detail) {
+      return;
+    }
+
+    if (projectRevealSafetyTimer) {
+      window.clearTimeout(projectRevealSafetyTimer);
+    }
+
+    function makeVisible() {
+      detail.classList.add("is-visible");
+    }
+
+    // Two frames preserve the existing 700ms transition by allowing the
+    // initial hidden state to be committed before revealing the article.
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(makeVisible);
+    });
+
+    // Independent safety net for throttled, backgrounded or interrupted tabs.
+    projectRevealSafetyTimer = window.setTimeout(makeVisible, 1200);
+  }
 
   function initializeTimeline() {
     timelineCleanup();
@@ -679,6 +715,9 @@
       "</div>" +
       "</article>";
 
+    container.setAttribute("aria-busy", "false");
+    revealProjectDetail();
+
     if (typeof window.revealElements === "function") {
       window.revealElements(container);
     }
@@ -687,6 +726,31 @@
     initializeGallery();
   }
 
-  document.addEventListener("languagechange", renderSelectedProject);
-  renderSelectedProject();
+  function showRenderError(error) {
+    timelineCleanup();
+    galleryCleanup();
+    if (projectRevealSafetyTimer) {
+      window.clearTimeout(projectRevealSafetyTimer);
+      projectRevealSafetyTimer = null;
+    }
+
+    console.error("Project rendering failed.", error);
+    container.setAttribute("aria-busy", "false");
+    container.innerHTML =
+      "<p class='project-fallback' role='alert'>" +
+      escapeHtml(translate("project.renderError")) +
+      "</p>";
+    document.body.classList.remove("is-entering", "is-leaving");
+  }
+
+  function safelyRenderSelectedProject() {
+    try {
+      renderSelectedProject();
+    } catch (error) {
+      showRenderError(error);
+    }
+  }
+
+  document.addEventListener("languagechange", safelyRenderSelectedProject);
+  safelyRenderSelectedProject();
 })();

@@ -39,7 +39,31 @@
 
     </header>
 
-    <main class="shell project-main" data-project-detail></main>
+    <main class="shell project-main" data-project-detail aria-busy="true">
+      <p
+        class="project-fallback"
+        data-project-render-error
+        data-i18n="project.renderError"
+        role="alert"
+        hidden
+      >No se ha podido cargar este proyecto. Prueba a recargar la página.</p>
+      <noscript>
+        <p class="project-fallback" role="alert">Activa JavaScript para ver este proyecto.</p>
+      </noscript>
+    </main>
+
+    <script>
+      window.setTimeout(function () {
+        var projectMain = document.querySelector("[data-project-detail]");
+        var renderError = projectMain && projectMain.querySelector("[data-project-render-error]");
+
+        if (projectMain && projectMain.getAttribute("aria-busy") === "true" && renderError) {
+          projectMain.setAttribute("aria-busy", "false");
+          renderError.hidden = false;
+          document.body.classList.remove("is-entering", "is-leaving");
+        }
+      }, 4000);
+    </script>
 
     <footer class="site-footer shell" aria-label="Pie de página" data-i18n-aria-label="footer.label">
       <p class="footer-copy">&copy; 2026 Miguel. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>

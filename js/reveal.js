@@ -23,6 +23,12 @@
       : Array.prototype.slice.call(scope.querySelectorAll("[data-reveal]"));
 
     targets.forEach(function (element) {
+      // Project pages own their above-the-fold reveal. Observing the entire
+      // long article with a ratio threshold can leave it permanently hidden.
+      if (element.matches(".project-detail")) {
+        return;
+      }
+
       if (reduceMotion || !observer) {
         element.classList.add("is-visible");
         return;

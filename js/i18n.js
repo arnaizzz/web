@@ -98,6 +98,10 @@
       es: "Proyecto no encontrado. Se muestra el primer proyecto.",
       en: "Project not found. Showing the first project."
     },
+    "project.renderError": {
+      es: "No se ha podido cargar este proyecto. Prueba a recargar la página.",
+      en: "This project could not be loaded. Please reload the page."
+    },
     "project.subproject": { es: "Subproyecto", en: "Subproject" },
     "project.roles": { es: "Puestos", en: "Roles" },
     "project.pendingDetails": {
