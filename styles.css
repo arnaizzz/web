@@ -2789,12 +2789,14 @@ body::before {
   overflow: hidden;
 }
 
-.project-image:has(> img) {
+.project-image:has(> img),
+.project-image:has(> picture > img) {
   align-self: center;
   height: auto;
 }
 
-.project-image:has(> img) img {
+.project-image:has(> img) img,
+.project-image:has(> picture > img) img {
   height: auto;
 }
 
@@ -4129,6 +4131,14 @@ body.is-lightbox-open {
   filter: none;
 }
 
+.hero-portrait-cutout > picture,
+.project-image > picture,
+.logo-marquee-item > picture,
+.project-media-image-trigger > picture,
+.project-gallery-item > picture {
+  display: contents;
+}
+
 :root[data-theme="dark"] .hero-portrait-cutout {
   overflow: hidden;
   border-radius: clamp(24px, 3vw, 40px);
@@ -4222,7 +4232,8 @@ body.is-lightbox-open {
     margin-top: 0.6rem;
   }
 
-  .project-image:has(> img) {
+  .project-image:has(> img),
+  .project-image:has(> picture > img) {
     aspect-ratio: auto;
   }
 

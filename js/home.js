@@ -39,14 +39,43 @@
       .replace(/'/g, "&#039;");
   }
 
+  function renderResponsiveImage(src, alt, sizes) {
+    var variants = window.IMAGE_VARIANTS && window.IMAGE_VARIANTS[src];
+    var sources = "";
+
+    if (variants) {
+      ["avif", "webp"].forEach(function (format) {
+        var candidates = Array.isArray(variants[format]) ? variants[format] : [];
+
+        if (!candidates.length) {
+          return;
+        }
+
+        sources +=
+          "<source type='image/" + format + "' srcset='" +
+          candidates.map(function (candidate) {
+            return escapeHtml(candidate.src) + " " + candidate.width + "w";
+          }).join(", ") +
+          "' sizes='" + escapeHtml(sizes) + "'>";
+      });
+    }
+
+    return (
+      "<picture>" + sources +
+      "<img src='" + escapeHtml(src) +
+      "' alt='" + escapeHtml(alt) +
+      "'" + (variants ? " width='" + variants.width + "' height='" + variants.height + "'" : "") +
+      " loading='lazy' decoding='async'>" +
+      "</picture>"
+    );
+  }
+
   function renderCover(project) {
     if (project.coverImage && project.coverImage.src) {
-      return (
-        "<img src='" +
-        escapeHtml(project.coverImage.src) +
-        "' alt='" +
-        escapeHtml(localize(project.coverImage.alt || "", getLanguage())) +
-        "' loading='lazy' decoding='async'>"
+      return renderResponsiveImage(
+        project.coverImage.src,
+        localize(project.coverImage.alt || "", getLanguage()),
+        "(max-width: 767px) calc(100vw - 90px), (max-width: 980px) calc(100vw - 44px), 31vw"
       );
     }
 

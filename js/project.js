@@ -50,6 +50,37 @@
       .replace(/'/g, "&#039;");
   }
 
+  function renderResponsiveImage(src, alt, sizes) {
+    var variants = window.IMAGE_VARIANTS && window.IMAGE_VARIANTS[src];
+    var sources = "";
+
+    if (variants) {
+      ["avif", "webp"].forEach(function (format) {
+        var candidates = Array.isArray(variants[format]) ? variants[format] : [];
+
+        if (!candidates.length) {
+          return;
+        }
+
+        sources +=
+          "<source type='image/" + format + "' srcset='" +
+          candidates.map(function (candidate) {
+            return escapeHtml(candidate.src) + " " + candidate.width + "w";
+          }).join(", ") +
+          "' sizes='" + escapeHtml(sizes) + "'>";
+      });
+    }
+
+    return (
+      "<picture>" + sources +
+      "<img src='" + escapeHtml(src) +
+      "' alt='" + escapeHtml(alt) +
+      "'" + (variants ? " width='" + variants.width + "' height='" + variants.height + "'" : "") +
+      " loading='lazy' decoding='async'>" +
+      "</picture>"
+    );
+  }
+
   function renderInlineText(value) {
     return escapeHtml(value).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
   }
@@ -82,15 +113,14 @@
       var imageClass = item.layout === "featured" ? " project-media-item--featured" : "";
       imageClass += item.paired ? " project-media-item--paired" : "";
       imageClass += item.centered ? " project-media-item--centered" : "";
+      var mediaSizes = "(max-width: 767px) calc(100vw - 42px), (max-width: 980px) min(720px, calc(100vw - 44px)), 44vw";
       return (
         "<figure class='project-media-item" + imageClass + "'><button class='project-media-image-trigger' type='button' data-gallery-item" +
         " data-gallery-src='" + escapeHtml(item.src) + "'" +
         " data-gallery-alt='" + escapeHtml(imageAlt) + "'" +
-        " aria-label='" + escapeHtml(openLabel + " " + imageAlt) + "'><img src='" +
-        escapeHtml(item.src) +
-        "' alt='" +
-        escapeHtml(imageAlt) +
-        "' loading='lazy' decoding='async'></button>" +
+        " aria-label='" + escapeHtml(openLabel + " " + imageAlt) + "'>" +
+        renderResponsiveImage(item.src, imageAlt, mediaSizes) +
+        "</button>" +
         (caption
           ? "<figcaption>" + escapeHtml(caption) + "</figcaption>"
           : "") +
@@ -270,13 +300,17 @@
         var featuredClass = item.featured ? " is-featured" : "";
         var wideClass = item.wide ? " is-wide" : "";
         var landscapeClass = item.landscape ? " is-landscape" : "";
+        var isFullWidth = item.featured || item.wide || item.landscape;
+        var gallerySizes = isFullWidth
+          ? "(max-width: 767px) calc(100vw - 42px), (max-width: 980px) min(720px, calc(100vw - 44px)), 44vw"
+          : "(max-width: 767px) calc((100vw - 60px) / 2), (max-width: 980px) min(350px, calc((100vw - 60px) / 2)), 22vw";
 
         return (
           "<button class='project-gallery-item" + featuredClass + wideClass + landscapeClass + "' type='button' data-gallery-item" +
           " data-gallery-src='" + escapeHtml(item.src) + "'" +
           " data-gallery-alt='" + escapeHtml(alt) + "'" +
           " aria-label='" + escapeHtml(openLabel + " " + alt) + "'>" +
-          "<img src='" + escapeHtml(item.src) + "' alt='" + escapeHtml(alt) + "' loading='lazy' decoding='async'>" +
+          renderResponsiveImage(item.src, alt, gallerySizes) +
           "</button>"
         );
       }).join("") +
@@ -656,7 +690,7 @@
       (!hasProjectMedia && !hasProjectGallery ? renderMedia([], title) : "");
     var descriptionMeta = document.querySelector("[data-project-description]");
 
-    document.title = title + " — Miguel Arnáiz";
+    document.title = title + " - Miguel Arnáiz";
     if (descriptionMeta) {
       descriptionMeta.setAttribute(
         "content",

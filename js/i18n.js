@@ -21,8 +21,8 @@
       en: "Professional profile of Miguel Arnáiz, an entrepreneur and Business Administration graduate based in Madrid."
     },
     "meta.project.title": {
-      es: "Miguel Arnáiz — Proyecto",
-      en: "Miguel Arnáiz — Project"
+      es: "Miguel Arnáiz - Proyecto",
+      en: "Miguel Arnáiz - Project"
     },
     "nav.main": { es: "Navegación principal", en: "Main navigation" },
     "nav.home": { es: "Inicio", en: "Home" },

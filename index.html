@@ -15,7 +15,9 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/png" href="img/favicon-photo-circle.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
@@ -54,14 +56,18 @@
 
         <div class="hero-visual">
           <figure class="hero-portrait hero-portrait-cutout">
-            <img
-              src="img/miguel-hero-cutout-v2.png"
-              alt="Miguel Arnáiz"
-              width="673"
-              height="904"
-              fetchpriority="high"
-              decoding="async"
-            />
+            <picture>
+              <source type="image/avif" srcset="img/optimized/miguel-hero-cutout-v2-w480.avif 480w, img/optimized/miguel-hero-cutout-v2-w673.avif 673w" sizes="(max-width: 767px) calc(100vw - 42px), 48vw" />
+              <source type="image/webp" srcset="img/optimized/miguel-hero-cutout-v2-w480.webp 480w, img/optimized/miguel-hero-cutout-v2-w673.webp 673w" sizes="(max-width: 767px) calc(100vw - 42px), 48vw" />
+              <img
+                src="img/miguel-hero-cutout-v2.png"
+                alt="Miguel Arnáiz"
+                width="673"
+                height="904"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
           </figure>
 
           <div class="hero-info-card hero-role-card">
@@ -91,34 +97,34 @@
         <div class="logo-marquee-track" data-logo-marquee-track>
           <ul class="logo-marquee-list" data-logo-marquee-list>
             <li class="logo-marquee-item" style="--logo-height: 2.45rem">
-              <img src="img/logos/puffy-slippers.png" alt="Puffy Slippers" width="362" height="192" decoding="async">
+              <picture><source type="image/avif" srcset="img/optimized/logos/puffy-slippers-w362.avif"><source type="image/webp" srcset="img/optimized/logos/puffy-slippers-w362.webp"><img src="img/logos/puffy-slippers.png" alt="Puffy Slippers" width="362" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.4rem">
-              <img src="img/logos/beastversion.png" alt="BeastVersion" width="215" height="192" decoding="async">
+              <picture><source type="image/webp" srcset="img/optimized/logos/beastversion-w215.webp"><img src="img/logos/beastversion.png" alt="BeastVersion" width="215" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.3rem">
-              <img src="img/logos/prophero.png" alt="PropHero" width="809" height="192" decoding="async">
+              <picture><source type="image/webp" srcset="img/optimized/logos/prophero-w809.webp"><img src="img/logos/prophero.png" alt="PropHero" width="809" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.4rem">
-              <img src="img/logos/portadicas.png" alt="Portadicas" width="193" height="192" decoding="async">
+              <picture><source type="image/webp" srcset="img/optimized/logos/portadicas-w193.webp"><img src="img/logos/portadicas.png" alt="Portadicas" width="193" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.3rem">
-              <img src="img/logos/detaily.png" alt="Detaily" width="570" height="192" decoding="async">
+              <picture><source type="image/webp" srcset="img/optimized/logos/detaily-w570.webp"><img src="img/logos/detaily.png" alt="Detaily" width="570" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.25rem">
-              <img src="img/logos/arnaiz-arn.png" alt="arnaiz." width="741" height="192" decoding="async">
+              <picture><source type="image/webp" srcset="img/optimized/logos/arnaiz-arn-w741.webp"><img src="img/logos/arnaiz-arn.png" alt="arnaiz." width="741" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.6rem">
-              <img src="img/logos/sesale.png" alt="Sesale" width="298" height="192" decoding="async">
+              <picture><source type="image/avif" srcset="img/optimized/logos/sesale-w298.avif"><source type="image/webp" srcset="img/optimized/logos/sesale-w298.webp"><img src="img/logos/sesale.png" alt="Sesale" width="298" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.7rem">
-              <img src="img/logos/start-uc3m.png" alt="Start UC3M" width="473" height="192" decoding="async">
+              <picture><source type="image/webp" srcset="img/optimized/logos/start-uc3m-w473.webp"><img src="img/logos/start-uc3m.png" alt="Start UC3M" width="473" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.5rem">
-              <img src="img/logos/ekly.png" alt="Ekly" width="222" height="192" decoding="async">
+              <picture><source type="image/webp" srcset="img/optimized/logos/ekly-w222.webp"><img src="img/logos/ekly.png" alt="Ekly" width="222" height="192" decoding="async"></picture>
             </li>
             <li class="logo-marquee-item" style="--logo-height: 2.2rem">
-              <img src="img/logos/vemory.png" alt="Vemory" width="1169" height="192" decoding="async">
+              <picture><source type="image/avif" srcset="img/optimized/logos/vemory-w1169.avif"><source type="image/webp" srcset="img/optimized/logos/vemory-w1169.webp"><img src="img/logos/vemory.png" alt="Vemory" width="1169" height="192" decoding="async"></picture>
             </li>
           </ul>
         </div>
@@ -165,6 +171,7 @@
 
     <script src="js/i18n.js" defer></script>
     <script src="js/projects-data.js" defer></script>
+    <script src="js/image-variants.js" defer></script>
     <script src="js/transitions.js?v=20261102" defer></script>
     <script src="js/cv-menu.js" defer></script>
     <script src="js/logo-marquee.js" defer></script>

@@ -1087,7 +1087,7 @@ window.PROJECTS = [
     content: {
       introduction: {
         es: "Detaily nació en febrero de 2023, cuando identificamos una oportunidad comercial en un problema tan cotidiano como hacer un regalo. En fechas señaladas como San Valentín, muchas personas quieren sorprender a alguien especial, pero no siempre disponen del tiempo o los medios para organizarlo. Decidimos convertir esa necesidad en una propuesta de negocio: un servicio de regalos personalizados que permitía enviar flores acompañadas de cartas diseñadas a medida, con entregas directas en universidades y residencias de estudiantes, incluso de forma anónima.",
-        en: "Detaily was born in February 2023, when we identified a business opportunity in an everyday challenge: giving someone a gift. On occasions such as Valentine's Day, many people want to surprise someone special but do not always have the time or means to arrange it. We decided to turn that need into a business proposition: a personalised gift service through which customers could send flowers accompanied by bespoke cards, delivered directly to universities and student residences—even anonymously."
+        en: "Detaily was born in February 2023, when we identified a business opportunity in an everyday challenge: giving someone a gift. On occasions such as Valentine's Day, many people want to surprise someone special but do not always have the time or means to arrange it. We decided to turn that need into a business proposition: a personalised gift service through which customers could send flowers accompanied by bespoke cards, delivered directly to universities and student residences-even anonymously."
       },
       body: {
         es: [
@@ -1187,7 +1187,7 @@ window.PROJECTS = [
     content: {
       introduction: {
         es: "Ekly nació cuando tenía 13 años, impulsada por mi creciente interés por el diseño gráfico y las ganas de llevar mis propias creaciones más allá de la pantalla. Después de comenzar a trabajar con Photoshop e Illustrator y participar en competiciones de diseño, decidí dar un paso más: en lugar de diseñar para otras marcas, quería construir la mía propia. Así surgió Ekly, mi primera aventura empresarial, una marca de ropa con la que podía transformar mis ideas en productos reales.",
-        en: "Ekly was born when I was 13, driven by my growing interest in graphic design and my desire to take my own creations beyond the screen. After I began working with Photoshop and Illustrator and entering design competitions, I decided to go one step further: instead of designing for other brands, I wanted to build my own. That was how Ekly came about—my first business venture, a clothing brand through which I could turn my ideas into real products."
+        en: "Ekly was born when I was 13, driven by my growing interest in graphic design and my desire to take my own creations beyond the screen. After I began working with Photoshop and Illustrator and entering design competitions, I decided to go one step further: instead of designing for other brands, I wanted to build my own. That was how Ekly came about-my first business venture, a clothing brand through which I could turn my ideas into real products."
       },
       body: {
         es: [
