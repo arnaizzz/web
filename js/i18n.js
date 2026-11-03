@@ -1,6 +1,6 @@
 (function languageController() {
   var storageKey = "portfolio-language";
-  var defaultLanguage = "es";
+  var defaultLanguage = "en";
   var supportedLanguages = ["es", "en"];
 
   var translations = {
@@ -234,11 +234,35 @@
     }
   }
 
+  function detectBrowserLanguage() {
+    try {
+      var browser = window.navigator;
+      var preferredLanguage = browser && browser.languages && browser.languages.length
+        ? browser.languages[0]
+        : browser && browser.language;
+
+      if (typeof preferredLanguage !== "string" || !preferredLanguage.trim()) {
+        preferredLanguage = browser && browser.language;
+      }
+
+      if (typeof preferredLanguage !== "string" || !preferredLanguage.trim()) {
+        return null;
+      }
+
+      var languageCode = preferredLanguage.trim().toLowerCase().split(/[-_]/)[0];
+      return languageCode === "es" ? "es" : "en";
+    } catch (error) {
+      return null;
+    }
+  }
+
   function resolveLanguage() {
     var savedLanguage = getSavedLanguage();
-    return supportedLanguages.indexOf(savedLanguage) !== -1
-      ? savedLanguage
-      : defaultLanguage;
+    if (supportedLanguages.indexOf(savedLanguage) !== -1) {
+      return savedLanguage;
+    }
+
+    return detectBrowserLanguage() || defaultLanguage;
   }
 
   function interpolate(value, replacements) {
