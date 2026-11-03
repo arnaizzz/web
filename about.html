@@ -3,6 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function prepareSessionPreloader() {
+        var root = document.documentElement;
+        var storageKey = "miguel-arnaiz-preloader-seen";
+        var shouldShow = false;
+
+        try {
+          shouldShow = window.sessionStorage.getItem(storageKey) !== "1";
+          if (shouldShow) {
+            window.sessionStorage.setItem(storageKey, "1");
+          }
+        } catch (storageError) {
+          var cookieMarker = storageKey + "=1";
+
+          try {
+            shouldShow = document.cookie.split("; ").indexOf(cookieMarker) === -1;
+            if (shouldShow) {
+              document.cookie = cookieMarker + "; Path=/; SameSite=Lax";
+            }
+          } catch (cookieError) {
+            shouldShow = true;
+          }
+        }
+
+        if (!shouldShow) {
+          return;
+        }
+
+        root.classList.add("has-session-preloader");
+        window.__portfolioPreloaderStartedAt = Date.now();
+        window.__portfolioPreloaderSafetyTimer = window.setTimeout(function () {
+          var preloader = document.querySelector("[data-session-preloader]");
+          var body = document.body;
+
+          root.classList.remove("has-session-preloader");
+          if (preloader) {
+            preloader.remove();
+          }
+          if (body) {
+            body.classList.remove("is-entering", "is-leaving");
+          }
+        }, 2500);
+      })();
+    </script>
     <title data-i18n="meta.about.title">Miguel Arnáiz - Sobre mí</title>
     <meta
       name="description"
@@ -18,10 +62,25 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="img/favicon-48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20261103b" />
   </head>
 
   <body class="page is-entering">
+    <div class="session-preloader" data-session-preloader aria-hidden="true">
+      <div class="session-preloader-content">
+        <img
+          class="session-preloader-logo"
+          src="img/arnaiz-preloader.png"
+          width="480"
+          height="116"
+          alt=""
+          decoding="sync"
+          fetchpriority="high"
+        />
+        <span class="session-preloader-track"><span></span></span>
+      </div>
+    </div>
+
     <div class="bg-orbs" aria-hidden="true">
       <span class="orb orb-blue"></span>
       <span class="orb orb-purple"></span>
@@ -118,7 +177,7 @@
     </footer>
 
     <script src="js/i18n.js" defer></script>
-    <script src="js/transitions.js?v=20261102" defer></script>
+    <script src="js/transitions.js?v=20261103b" defer></script>
     <script src="js/cv-menu.js" defer></script>
     <script src="js/about.js" defer></script>
     <script src="js/reveal.js" defer></script>

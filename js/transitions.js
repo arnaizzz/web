@@ -1,7 +1,48 @@
 (function pageTransitions() {
   var forceCleanupTimer = null;
   var navigationDelay = 80;
+  var preloaderMinimumVisibleTime = 900;
   var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  function finishSessionPreloader() {
+    var root = document.documentElement;
+    var preloader = document.querySelector("[data-session-preloader]");
+
+    if (window.__portfolioPreloaderSafetyTimer) {
+      window.clearTimeout(window.__portfolioPreloaderSafetyTimer);
+      window.__portfolioPreloaderSafetyTimer = null;
+    }
+
+    root.classList.remove("has-session-preloader");
+    if (preloader) {
+      preloader.remove();
+    }
+  }
+
+  function dismissSessionPreloader() {
+    var root = document.documentElement;
+    var preloader = document.querySelector("[data-session-preloader]");
+    var startedAt = window.__portfolioPreloaderStartedAt || Date.now();
+    var remainingVisibleTime = Math.max(0, preloaderMinimumVisibleTime - (Date.now() - startedAt));
+
+    if (!root.classList.contains("has-session-preloader") || !preloader) {
+      finishSessionPreloader();
+      return;
+    }
+
+    if (reducedMotion.matches) {
+      finishSessionPreloader();
+      return;
+    }
+
+    window.setTimeout(function () {
+      window.requestAnimationFrame(function () {
+        preloader.classList.add("is-dismissing");
+        preloader.addEventListener("transitionend", finishSessionPreloader, { once: true });
+        window.setTimeout(finishSessionPreloader, 450);
+      });
+    }, remainingVisibleTime);
+  }
 
   function clearTransitionState() {
     var body = document.body;
@@ -30,6 +71,7 @@
     window.requestAnimationFrame(function () {
       clearTransitionState();
     });
+    dismissSessionPreloader();
   });
 
   window.addEventListener("pageshow", function () {
